@@ -1,0 +1,77 @@
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\Entrenador.wo
+// Entrenadores
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cligaDataDictionary.dd
+Use cequipoDataDictionary.dd
+Use centrenadorDataDictionary.dd
+
+Object oEntrenadorView is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Entrenadores"
+    Set piWidth to 700
+
+    Object oliga_DD is a cligaDataDictionary
+    End_Object 
+
+    Object oequipo_DD is a cequipoDataDictionary
+        Set DDO_Server To oliga_DD
+    End_Object 
+
+    Object oentrenador_DD is a centrenadorDataDictionary
+        Set DDO_Server To oequipo_DD
+    End_Object 
+
+    Set Main_DD To oentrenador_DD
+    Set Server  To oentrenador_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oentrenadorID is a cWebForm
+            Entry_Item entrenador.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "ID"
+        End_Object 
+
+        Object oentrenadorNombre is a cWebForm
+            Entry_Item entrenador.Nombre
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nombre"
+        End_Object 
+
+        Object oentrenadorApellido is a cWebForm
+            Entry_Item entrenador.Apellido
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Apellido"
+        End_Object 
+
+        Object oentrenadorNacionalidad is a cWebForm
+            Entry_Item entrenador.Nacionalidad
+            Set piColumnSpan to 11
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nacionalidad"
+        End_Object 
+
+        Object oequipoID is a cWebForm
+            Entry_Item equipo.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "EquipoID"
+        End_Object 
+    End_Object 
+
+End_Object 

@@ -1,0 +1,67 @@
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\Liga.wo
+// Ligas
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cligaDataDictionary.dd
+
+Object oLigaView is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Ligas"
+    Set piWidth to 700
+
+    Object oliga_DD is a cligaDataDictionary
+    End_Object 
+
+    Set Main_DD To oliga_DD
+    Set Server  To oliga_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oligaID is a cWebForm
+            Entry_Item liga.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "ID"
+        End_Object 
+
+        Object oligaNombre is a cWebForm
+            Entry_Item liga.Nombre
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nombre"
+        End_Object 
+
+        Object oligaPais is a cWebForm
+            Entry_Item liga.Pais
+            Set piColumnSpan to 11
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Pais"
+        End_Object 
+
+        Object oligaEquipos is a cWebForm
+            Entry_Item liga.Equipos
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Equipos"
+        End_Object 
+
+        Object oligaEquiposMax is a cWebForm
+            Entry_Item liga.EquiposMax
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "EquiposMax"
+        End_Object 
+    End_Object 
+
+End_Object 

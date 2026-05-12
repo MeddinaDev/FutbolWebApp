@@ -1,0 +1,43 @@
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\Posicion.wo
+// Posiciones
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cposicionDataDictionary.dd
+
+Object oPosicionView is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Posiciones"
+    Set piWidth to 700
+
+    Object oposicion_DD is a cposicionDataDictionary
+    End_Object 
+
+    Set Main_DD To oposicion_DD
+    Set Server  To oposicion_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+        Object oposicionID is a cWebForm
+            Entry_Item posicion.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "ID"
+        End_Object 
+
+        Object oposicionNombre is a cWebForm
+            Entry_Item posicion.Nombre
+            Set piColumnSpan to 11
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nombre"
+        End_Object 
+    End_Object 
+
+End_Object 
