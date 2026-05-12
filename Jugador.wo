@@ -1,0 +1,88 @@
+﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\Jugador.wo
+// Jugadores
+//
+
+Use cWebView.pkg
+Use cWebPanel.pkg
+Use cWebForm.pkg
+
+Use cligaDataDictionary.dd
+Use cequipoDataDictionary.dd
+Use cjugadorDataDictionary.dd
+Use cWebButton.pkg
+
+Object oJugadorView is a cWebView
+    Set piColumnCount to 12
+    Set psCaption to "Jugadores"
+    Set piWidth to 700
+
+    Object oliga_DD is a cligaDataDictionary
+    End_Object 
+
+    Object oequipo_DD is a cequipoDataDictionary
+        Set DDO_Server To oliga_DD
+    End_Object 
+
+    Object ojugador_DD is a cjugadorDataDictionary
+        Set DDO_Server To oequipo_DD
+    End_Object 
+
+    Set Main_DD To ojugador_DD
+    Set Server  To ojugador_DD
+
+
+    Object oWebMainPanel is a cWebPanel
+        Set piColumnCount to 12
+
+ 
+          Object oBotonMagico is a cWebButton
+            Set piColumnSpan to 0
+            Set psCaption to "Abrir Lista AHORA"
+            
+            Procedure OnClick
+                Send Popup of oJugadorLista Self
+            End_Procedure
+        End_Object
+        Object ojugadorID is a cWebForm
+            Entry_Item jugador.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "ID"
+            Set pbPromptButton to True
+        End_Object 
+
+        Object ojugadorNombre is a cWebForm
+            Entry_Item jugador.Nombre
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nombre"
+        End_Object 
+
+        Object ojugadorApellido is a cWebForm
+            Entry_Item jugador.Apellido
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Apellido"
+        End_Object 
+
+        Object ojugadorNacionalidad is a cWebForm
+            Entry_Item jugador.Nacionalidad
+            Set piColumnSpan to 11
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "Nacionalidad"
+        End_Object 
+
+        Object oequipoID is a cWebForm
+            Entry_Item equipo.ID
+            Set piColumnSpan to 3
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "EquipoID"
+        End_Object 
+    End_Object 
+
+End_Object 
