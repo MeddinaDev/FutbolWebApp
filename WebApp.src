@@ -16,7 +16,7 @@ Object oWebApp is a cWebApp
     // to drill down style views.
     Set peApplicationStyle to wvsDrillDown   
     Set peApplicationStateMode to asmHistoryAndUrls 
-    Set psEncryptPassword to "<^4)F2:ZS(dzZ`nsrNj^<lkY]<$\ngM.@N#Wvh_z"
+    Set psEncryptPassword to "Kbgthft<3y=zhCNFQ~BR)93faZ?(1^e8bY=?k[]#"
 
     Object oViewStack is a cWebViewStack
     End_Object
@@ -53,21 +53,10 @@ Object oWebApp is a cWebApp
                 Object oViewMenu is a cWebMenuItem
                     Set psCaption to C_$View
 
-                    Object oJugadoresItem1 is a cWebMenuItem
-                        Set psCaption to "Jugadores"
+                    Object oSelectEntrenadorItem1 is a cWebMenuItem
+                        Set psCaption to "SelectEntrenador"
 
-                        WebRegisterPath ntNavigateBegin oJugadorView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oEntrenadoresItem1 is a cWebMenuItem
-                        Set psCaption to "Entrenadores"
-
-                        WebRegisterPath ntNavigateBegin oEntrenadorView
+                        WebRegisterPath ntNavigateBegin oSelectEntrenador
 
                         Procedure OnClick
                             Forward Send OnClick
@@ -75,21 +64,10 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
 
-                    Object oEquiposItem1 is a cWebMenuItem
-                        Set psCaption to "Equipos"
+                    Object oSelectJugadorItem1 is a cWebMenuItem
+                        Set psCaption to "SelectJugador"
 
-                        WebRegisterPath ntNavigateBegin oEquipoView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oLigasItem1 is a cWebMenuItem
-                        Set psCaption to "Ligas"
-
-                        WebRegisterPath ntNavigateBegin oLigaView
+                        WebRegisterPath ntNavigateBegin oSelectJugador
 
                         Procedure OnClick
                             Forward Send OnClick
@@ -97,21 +75,10 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
 
-                    Object oPosicionesItem1 is a cWebMenuItem
-                        Set psCaption to "Posiciones"
+                    Object oSelectPosicionItem1 is a cWebMenuItem
+                        Set psCaption to "SelectPosicion"
 
-                        WebRegisterPath ntNavigateBegin oPosicionView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oJugadoresItem2 is a cWebMenuItem
-                        Set psCaption to "Jugadores"
-
-                        WebRegisterPath ntNavigateBegin oJugadorView
+                        WebRegisterPath ntNavigateBegin oSelectPosicion
 
                         Procedure OnClick
                             Forward Send OnClick
@@ -119,21 +86,10 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
 
-                    Object oEntrenadoresItem2 is a cWebMenuItem
-                        Set psCaption to "Entrenadores"
+                    Object oSelectEquipoItem1 is a cWebMenuItem
+                        Set psCaption to "SelectEquipo"
 
-                        WebRegisterPath ntNavigateBegin oEntrenadorView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oEquiposItem2 is a cWebMenuItem
-                        Set psCaption to "Equipos"
-
-                        WebRegisterPath ntNavigateBegin oEquipoView
+                        WebRegisterPath ntNavigateBegin oSelectEquipo
 
                         Procedure OnClick
                             Forward Send OnClick
@@ -141,76 +97,10 @@ Object oWebApp is a cWebApp
                         End_Procedure
                     End_Object
 
-                    Object oLigasItem2 is a cWebMenuItem
-                        Set psCaption to "Ligas"
+                    Object oSelectLigaItem1 is a cWebMenuItem
+                        Set psCaption to "SelectLiga"
 
-                        WebRegisterPath ntNavigateBegin oLigaView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oPosicionesItem2 is a cWebMenuItem
-                        Set psCaption to "Posiciones"
-
-                        WebRegisterPath ntNavigateBegin oPosicionView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oJugadoresItem3 is a cWebMenuItem
-                        Set psCaption to "Jugadores"
-
-                        WebRegisterPath ntNavigateBegin oJugadorView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oEntrenadoresItem3 is a cWebMenuItem
-                        Set psCaption to "Entrenadores"
-
-                        WebRegisterPath ntNavigateBegin oEntrenadorView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oEquiposItem3 is a cWebMenuItem
-                        Set psCaption to "Equipos"
-
-                        WebRegisterPath ntNavigateBegin oEquipoView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oLigasItem3 is a cWebMenuItem
-                        Set psCaption to "Ligas"
-
-                        WebRegisterPath ntNavigateBegin oLigaView
-
-                        Procedure OnClick
-                            Forward Send OnClick
-                                Send NavigatePath
-                        End_Procedure
-                    End_Object
-
-                    Object oPosicionesItem3 is a cWebMenuItem
-                        Set psCaption to "Posiciones"
-
-                        WebRegisterPath ntNavigateBegin oPosicionView
+                        WebRegisterPath ntNavigateBegin oSelectLiga
 
                         Procedure OnClick
                             Forward Send OnClick
@@ -294,15 +184,20 @@ Object oWebApp is a cWebApp
     End_Object    
 
     Use SessionManager.wo
+    Use Login.wo
     Use WebResourceManager.wo
     
     Use Dashboard.wo
-    Use Jugador.wo
-    Use Entrenador.wo
-    Use Equipo.wo
-    Use Liga.wo
-    Use Posicion.wo
-    Use JugadorLista.wo
+    Use SelectEntrenador.wo
+    Use ZoomEntrenador.wo
+    Use SelectJugador.wo
+    Use SelectPosicion.wo
+    Use SelectEquipo.wo
+    Use SelectLiga.wo
+    Use ZoomJugador.wo
+    Use ZoomPosicion.wo
+    Use ZoomEquipo.wo
+    Use ZoomLiga.wo
     Set phoDefaultView to oDashboard
 
 End_Object
